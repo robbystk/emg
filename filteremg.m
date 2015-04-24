@@ -3,8 +3,13 @@ function [ filtered ] = filteremg( unfiltered, fs )
 %   input:  signal to be filtered, sampling frequency
 %   output: filtered signal
 
+% normalized cutoff frequencies
+fn = fs / 2     % nyquist rate
+fl = 20 / fn    % normalize to nyquist because MATLAB
+fh = 400 / fn
+
 % calculate FIR coefficients
-[a,b] = butter(4,[20,400] * 2 / fs);
+[a,b] = butter(4,[fl,fh],'bandpass');
 
 % filter signal
 filtered = filter(b,a,unfiltered);
