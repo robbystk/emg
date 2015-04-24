@@ -17,6 +17,6 @@ if starts(n) >= stops(n)
     return
 end
 
-excerpt = signal(starts(n):stops(n);
+excerpt = signal(starts(n):stops(n));
 
 end
