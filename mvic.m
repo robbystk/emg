@@ -11,11 +11,10 @@ span = fs * 3;  % number of samples in three seconds
 % the beginning and end of the three-second interval
 start = floor((length(trial) - span) / 2);
 stop = length(trial) - start;
-excerpt = excerpt(trial, start, stop, 1);
-
+middle3 = excerpt(trial, start, stop, 1);
 
 % filter
-filtered = filteremg(excerpt, fs);
+filtered = filteremg(middle3, fs);
 
 % detrend
 detrended = detrend(filtered);
