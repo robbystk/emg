@@ -1,4 +1,4 @@
-function exerpt = exerpt(signal, starts, stops, n)
+function excerpt = excerpt(signal, starts, stops, n)
 %exerpt:    extracts a portion of a signal based on the nth pair of limits
 %           in starts and stops
 %   usage:  exerpt = exerpt(signal, starts, stops, n);
@@ -9,12 +9,12 @@ function exerpt = exerpt(signal, starts, stops, n)
 %   output: excerpt of the signal between the two markers
 
 if n > min(length(starts),length(stops))
-    disp("n is too big");
+    disp('n is too big');
     return
 end
 
 if starts(n) >= stops(n)
-    disp("start/stop mismatch");
+    disp('start/stop mismatch');
     return
 end
 
