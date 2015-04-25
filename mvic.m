@@ -1,6 +1,7 @@
 function mvic = mvic(trial, fs)
 %mvic:  computes the maximal voluntary isometric contraction (MVIC) of a 
 %       single trialsworth of EMG data with sampling frequency fs
+%   usage:  mvic = mvic(trial, fs);
 %   input:  one five-second trial worth of EMG data
 %           its sampling frequency
 %   output: the MVIC of that trial

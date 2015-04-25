@@ -1,6 +1,7 @@
 function exerpt = exerpt(signal, starts, stops, n)
 %exerpt:    extracts a portion of a signal based on the nth pair of limits
 %           in starts and stops
+%   usage:  exerpt = exerpt(signal, starts, stops, n);
 %   input:  the signal from which the excerp will be taken (signal)
 %           an array of start markers (starts)
 %           an array of stop markers (stops)

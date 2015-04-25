@@ -1,5 +1,6 @@
 function t = timebasis(signal, fs)
 %timebasis: creates time basis in ms for a signal with sample rate fs
+%   usage:  t = timebasis(signal, fs);
 %   input:  the signal, its sample frequency fs
 %   output: array of t-values the same length as the sample
 

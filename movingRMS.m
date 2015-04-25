@@ -1,5 +1,6 @@
 function [ RMS tRMS ] = movingRMS(signal, timebasis, n)
 %movingRMS: calculates the RMS of every n samples
+%   usage:  [RMS tRMS] = movingRMS(signal, timebasis, n);
 %   input:  the signal, 
 %           its corresponding time basis, 
 %           number of samples to average for each step
