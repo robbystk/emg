@@ -5,12 +5,12 @@ function [ filtered ] = filteremg( unfiltered, fs )
 %   output: filtered signal
 
 % normalized cutoff frequencies
-fn = fs / 2     % nyquist rate
-fl = 20 / fn    % normalize to nyquist because MATLAB
-fh = 400 / fn
+fn = fs / 2;    % nyquist rate
+fl = 20 / fn;   % normalize to nyquist because MATLAB
+fh = 400 / fn;
 
 % calculate FIR coefficients
-[a,b] = butter(4,[fl,fh],'bandpass');
+[b,a] = butter(4,[fl,fh],'bandpass');
 
 % filter signal
 filtered = filter(b,a,unfiltered);
