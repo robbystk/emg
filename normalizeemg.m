@@ -5,4 +5,4 @@ function normalized = normalizeemg(emgsignal, mvic)
 %           the value to normalize it to
 %   output: the normalized signal
 
-normalized = signal / mvic;
+normalized = emgsignal / mvic;
