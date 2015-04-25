@@ -1,10 +1,9 @@
-function [ delt tri starts stops ] = emgimport( filename )
-%emgimport: imports emg data from a csv file
-%   [ t delt tri starts stops ] = emgimport( filename )
+function [ delt tri starts stops ] = importemg( filename )
+%importemg: imports emg data from a csv file
+%   [ delt tri starts stops ] = importemg( filename )
 %   input:  the filename of the csv you wish to import
 %           columns: deltoid, tricep, start events, stop events
-%   output: list of time values in ms
-%           deltoid emg data (first column in csv)
+%   output: deltoid emg data (first column in csv)
 %           tricep emg data (second column)
 %           list of indexes of 'start' event markers (third column)
 %           list of indexes of 'stop' markers (fourth)
