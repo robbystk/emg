@@ -24,7 +24,7 @@ t = timebasis(delt, fs);
 l = length(delt);
 
 % pack it all into a struct
-delt = struct('emg',delt,'time',t,'l',l,'starts',starts,'stops',stops,'n',n,'fs',fs);
-tri = struct('emg',tri,'time',t,'l',l,'starts',starts,'stops',stops,'n',n,'fs',fs);
+delt = struct('signal',delt,'time',t,'l',l,'starts',starts,'stops',stops,'n',n,'fs',fs);
+tri = struct('signal',tri,'time',t,'l',l,'starts',starts,'stops',stops,'n',n,'fs',fs);
 
 end
