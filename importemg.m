@@ -1,4 +1,4 @@
-function [delt,tri] = importemg(filename , fs)
+function [delt,tri] = importemg(filename, fs)
 %importemg: imports emg data from a csv file
 %   usage:  [delt, tri] = importemg(filename);
 %   input:  the filename of the csv you wish to import
@@ -17,7 +17,7 @@ stop  = M(:,4); % stop data (fourth column)
 % extract start and stop breakpoints
 starts = find(start);
 stops  = find(stop);
-n = min(length(starts),length(stops);
+n = min(length(starts),length(stops));
 
 % generate time basis and length
 t = timebasis(delt, fs);
