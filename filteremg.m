@@ -1,8 +1,12 @@
-function [ filtered ] = filteremg( unfiltered, fs )
+function [ filtered ] = filteremg(unfiltered)
 %filteremg: band-pass filters a signal with passband 20--400 Hz
-%   usage:  [filtered] = filteremg(unfiltered, fs);
-%   input:  signal to be filtered, sampling frequency
-%   output: filtered signal
+%   usage:  [filtered] = filteremg(unfiltered);
+%   input:  EMG struct to be filtered
+%   output: filtered EMG struct
+
+% unpack everything
+fs      = unfiltered.fs;
+signal  = unfiltered.signal;
 
 % normalized cutoff frequencies
 fn = fs / 2;    % nyquist rate
@@ -13,6 +17,12 @@ fh = 400 / fn;
 [b,a] = butter(4,[fl,fh],'bandpass');
 
 % filter signal
-filtered = filter(b,a,unfiltered);
+filtsig = filter(b,a,signal);
+
+% transfer
+filtered = unfiltered;
+
+% update signal
+filtered.signal = filtsig;
 
 end
