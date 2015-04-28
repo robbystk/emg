@@ -1,6 +1,6 @@
 function [delt,tri] = importemg(filename, fs)
 %importemg: imports emg data from a csv file
-%   usage:  [delt, tri] = importemg(filename);
+%   usage:  [delt, tri] = importemg(filename, fs);
 %   input:  the filename of the csv you wish to import
 %           columns: deltoid, tricep, start events, stop events
 %           the sampling frequency fs
