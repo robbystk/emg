@@ -1,23 +1,23 @@
-function mvic = mvic(trial, fs)
+function mvic = mvic(emg)
 %mvic:  computes the maximal voluntary isometric contraction (MVIC) of a 
 %       single trialsworth of EMG data with sampling frequency fs
-%   usage:  mvic = mvic(trial, fs);
-%   input:  one five-second trial worth of EMG data
-%           its sampling frequency
+%   usage:  mvic = mvic(emg);
+%   input:  one five-second EMG struct
 %   output: the MVIC of that trial
 
 % extract middle three seconds
-span = fs * 3;  % number of samples in three seconds
+span = emg.fs * 3;  % number of samples in three seconds
 % the beginning and end of the three-second interval
-start = floor((length(trial) - span) / 2);
-stop = length(trial) - start;
-middle3 = excerpt(trial, start, stop, 1);
+emg.start = floor((emg.l - span) / 2);
+emg.stop = emg.l - emg.start;
+
+middle3 = crop(emg, 1);
 
 % filter
-filtered = filteremg(middle3, fs);
+filtered = filteremg(middle3);
 
 % detrend
-detrended = detrend(filtered);
+emg.signal = detrend(emg.signal);
 
 % RMS
-mvic = rms(detrended);
+mvic = rms(emg.signal);
