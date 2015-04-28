@@ -5,9 +5,10 @@ function [ mrms ] = movingRMS(emg, n);
 %           number of samples to average for each step
 %   output: an emgstruct with RMS values for the signal
 
-lenRMS = floor(emg.l) - 1 % how many RMSs will be calculated
-emg.starts = 1:n:(n * lenRMS - 1);
-emg.stops = n:n:emg.l;
+lenRMS = floor(emg.l / n) - 1; % how many RMSs will be calculated
+emg.starts  = 1:n:(n * lenRMS - 1);
+emg.stops   = n:n:emg.l;
+emg.n       = lenRMS;
 
 for i=1:lenRMS,
     part = crop(emg, i);
