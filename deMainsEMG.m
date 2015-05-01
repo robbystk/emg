@@ -1,4 +1,4 @@
-function [filtered] = deMainsEMG(emg)
+function [filtered] = deMainsEMG(unfiltered)
 %deMainsEMG: removes 60 Hz mains hum from an emg signal
 %   usage:  [filtered] = deMainsEMG(unfiltered);
 %       or: [filtered] = deMainsEMG(unfiltered,fl,fh); 
@@ -11,8 +11,8 @@ signal  = unfiltered.signal;
 
 % normalized frequencies
 fn = fs / 2;    % nyquist frequency
-wc = 60 / fn    % center frequency 60 Hz 
-bw = 1 / fn     % -3 dB bandwidth 1 Hz
+wc = 60 / fn;   % center frequency 60 Hz 
+bw = 1 / fn;    % -3 dB bandwidth 1 Hz
 
 % calculate FIR coefficients
 [b,a] = iirnotch(wc, bw);
