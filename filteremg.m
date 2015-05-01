@@ -18,8 +18,8 @@ switch nargin
         fl = 20 / fn;   % normalize to nyquist because MATLAB
         fh = 400 / fn;
     case 3
-        fl = fl / fn;
-        fh = fh / fn
+        fl = varargin{1} / fn;
+        fh = varargin{2} / fn;
     otherwise
         disp('must specify either zero or two frequencies');
         return
