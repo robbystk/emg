@@ -9,8 +9,8 @@ function [delt,tri] = importemg(filename, fs)
 M = csvread(filename,1,0); % import whole csv
 
 % extract columns
-delt  = M(:,1); % deltoid data (first column)
-tri   = M(:,2); % tricep data (second column)
+tri   = M(:,1); % deltoid data (first column)
+delt  = M(:,2); % tricep data (second column)
 start = M(:,3); % start data (third column)
 stop  = M(:,4); % stop data (fourth column)
 
