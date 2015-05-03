@@ -11,11 +11,13 @@ for subject = 1:5,
         [muscles(1),muscles(2)] = importemg(filename,fs);
         for muscle = 1:2,
             filtered = filteremg(deMainsEMG(muscles(muscle)));
+            trials(subject,exercise,muscle) = filtered;
             for rep = 1:5,
+%               disp(sprintf('s: %d; e: %d; r: %d; m: %d',subject,exercise,rep,muscle));
                 part = crop(filtered,rep);
                 part.signal = detrend(part.signal);
-                trials(subject,exercise,rep,muscle) = part;
-                movingrms(subject,exercise,rep,muscle) = movingRMS(part,75);
+                reps(subject,exercise,rep,muscle) = part;
+                movingrms(subject,exercise,rep,muscle) = movingRMS(part,20);
                 totalrms(subject,exercise,rep,muscle) = rms(part.signal);
             end %for rep
         end %for muscle       
