@@ -1,7 +1,6 @@
 function [filtered] = deMainsEMG(unfiltered)
 %deMainsEMG: removes 60 Hz mains hum from an emg signal
 %   usage:  [filtered] = deMainsEMG(unfiltered);
-%       or: [filtered] = deMainsEMG(unfiltered,fl,fh); 
 %   input:  EMG struct to be filtered
 %   output: notch-filtered EMG struct
 
