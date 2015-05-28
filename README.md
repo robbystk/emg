@@ -109,10 +109,28 @@ EMG structs containing the filtered EMG data, and the moving RMS with a
 
 ## Plotting Functions
 ### plotemg
+Creates a plot of an EMG signal including 'start' and 'stop' event markers.  
+#### Usage:
+```matlab
+plotemg(emg);
+```
+where `emg` is an EMG struct.  The signal is blue, 'start' events are green, 
+and 'stop' events are red.  
 
 ### colorplotemg
+Same as `plotemg` but allows specification of a color and line style for the 
+signal.  
+Usage: `plotemg(emg,color);` where `emg` is an EMG struct and `color` is a 
+string specifying color and line style (e.g. `'r-'` for a red, solid line.  
 
 ### compareplot
+Plots a the signals from both exercises and both muscles for a specified 
+subject and rep numbers.  
+Usage: `compareplot(array, subject, drep, prep);` where `array` is the 4-D 
+array from which to get the data, `subject` is the subject number to use, `drep`
+is the rep to use for the first exercise (dumbbell press) and `prep` is the rep
+number to use for the second exercise (perfect pushup).  
 
 ### spectrumemg
-
+Plots the spectrum of an EMG signal.  
+Usage: `spectrumemg(emg);` where `emg` is an EMG struct.  
