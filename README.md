@@ -93,8 +93,19 @@ don't line up, for example if there's an extra 'start' at the beginning of the
 data.  
 
 ### movingRMS
+Calculates the root mean square (RMS) of every `n` samples of an EMG signal
+#### Usage:
+```matlab
+RMS = movingRMS(emg, n);
+```
+where `RMS` and `emg` are both emg structs, and `n` is the number of samples to
+take in each RMS calculation.  
 
 ## process
+Process is a script that uses the above functions to automatically import, 
+process, and store all the EMG data for the project.  It produces 4-D arrays of
+EMG structs containing the filtered EMG data, and the moving RMS with a 
+20-sample window.  It also produces a 4-D array of the total RMS values.  
 
 ## Plotting Functions
 ### plotemg
