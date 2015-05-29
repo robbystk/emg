@@ -8,7 +8,7 @@ application.
 ## Contents
 * [Data Structures](https://github.com/robbystk/emg#data-structures)
   * [EMG Structs](https://github.com/robbystk/emg#emg-structs)
-  * [4-dimensional Array](https://github.com/robbystk/emg#4-dimensional-array-of-all-subjects-exercises-reps-and-muscles)
+  * [4-dimensional Array](https://github.com/robbystk/emg#4-dimensional-array)
 * [Signal Processing Functions](https://github.com/robbystk/emg#signal-processing-functions)
   * [importemg](https://github.com/robbystk/emg#importemg)
   * [timebasis](https://github.com/robbystk/emg#timebasis)
@@ -28,7 +28,6 @@ application.
 These scripts make use of structs to store and pass EMG data between functions. 
 An EMG struct has the following elements:  
 
-
 Element | Meaning
 --------|-------
 `signal`|A list of the EMG samples
@@ -39,7 +38,7 @@ Element | Meaning
 `n`|The number of pairs of 'start' and 'stop' event markers
 `fs`|The sampling frequency in Hz
 
-### 4-dimensional array of all subjects, exercises, reps, and muscles
+### 4-dimensional Array 
 The `process` script stores data in four-dimensional arrays with the first 
 index corresponding to subject number, the second corresponding to exercise, the
 third corresponding to rep number, and the fourth corresponding to muscle 
@@ -52,7 +51,7 @@ a colon (`:`) in place of the index (e.g. `array(subject, exercise, :, muscle)`)
 imports emg data from a csv file with the following columns:  
 deltoid, tricep, start events, stop events
 
-e.g.: 
+For example: 
 ```
 deltoid,            tricep,             Start,  End,
 -0.035858154296875, 0.444793701171875,  0,      0,
@@ -76,11 +75,10 @@ is the sampling frequency in Hz.  `t` is a list of time values corresponding to
 the samples in `signal`.  
 
 ### filteremg
-Butterworth band-pass filters an EMG struct with a passband of 20--400 Hz 
+Butterworth band-pass filters an EMG struct with a passband of 20-400 Hz 
 unless cutoff frequencies are specified.  
 **Usage:**  
-`filtered = filteremg(unfiltered);`
-or  
+`filtered = filteremg(unfiltered);` or  
 `filtered = filteremg(unfiltered,fl,fh);`  
 where `fl` is the low cutoff, and `fh` is the high cutoff of the passband in Hz.
 
@@ -91,11 +89,11 @@ systems.
 **Usage:** `filtered = deMainsEMG(unfiltered);`
 
 ### crop
-Extracts a portion of an EMG signal using the start and stop endpoints
+Extracts a portion of an EMG signal using the start and stop endpoints.  
 **Usage:** `exerpt = exerpt(emg, n);`  
 Where `n` specifies which pair of start/stop event markers to use.  For example,
 `excerpt(emg, 3);` returns the signal between the third 'start' event marker, 
-and the third 'stop' event marker.  Problems may occurr if the event markers 
+and the third 'stop' event marker.  Problems may occur if the event markers 
 don't line up, for example if there's an extra 'start' at the beginning of the 
 data.  
 
@@ -124,7 +122,7 @@ signal.
 string specifying color and line style (e.g. `'r-'` for a red, solid line.  
 
 ### compareplot
-Plots a the signals from both exercises and both muscles for a specified 
+Plots the signals from both exercises and both muscles for a specified 
 subject and rep numbers.  
 **Usage:** `compareplot(array, subject, drep, prep);` where `array` is the 4-D 
 array from which to get the data, `subject` is the subject number to use, `drep`
