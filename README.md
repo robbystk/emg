@@ -41,7 +41,7 @@ deltoid,            tricep,             Start,  End,
 ...
 ```
 
-Usage: `[delt, tri] = importemg(filename, fs);` where `filename` is the name of the 
+**Usage:** `[delt, tri] = importemg(filename, fs);` where `filename` is the name of the 
 file from which the data is to be imported and `fs` is the sampling frequency.  
 
 `delt` and `tri` are EMG structs
@@ -50,10 +50,7 @@ file from which the data is to be imported and `fs` is the sampling frequency.
 Creates a list of time values starting from zero given a list of samples and the
 sampling frequency.  
 
-#### Usage: 
-```matlab
-t = timebasis(signal, fs);
-```
+**Usage:** `t = timebasis(signal, fs);`  
 Where `signal` is the signal for which the time basis is to be created and `fs` 
 is the sampling frequency in Hz.  `t` is a list of time values corresponding to 
 the samples in `signal`.  
@@ -61,31 +58,21 @@ the samples in `signal`.
 ### filteremg
 Butterworth band-pass filters an EMG struct with a passband of 20--400 Hz 
 unless cutoff frequencies are specified.  
-#### Usage: 
-```matlab
-filtered = filteremg(unfiltered);
-```
-or
-```matlab
-filtered = filteremg(unfiltered,fl,fh);
-```
+**Usage:**  
+`filtered = filteremg(unfiltered);`
+or  
+`filtered = filteremg(unfiltered,fl,fh);`  
 where `fl` is the low cutoff, and `fh` is the high cutoff of the passband in Hz.
 
 ### deMainsEMG
 Notch-filters an EMG struct at 60 Hz to remove interference from electrical 
 systems.  
 
-#### Usage: 
-```matlab
-filtered = deMainsEMG(unfiltered);
-```
+**Usage:** `filtered = deMainsEMG(unfiltered);`
 
 ### crop
 Extracts a portion of an EMG signal using the start and stop endpoints
-#### Usage:
-```matlab
-exerpt = exerpt(emg, n);
-```
+**Usage:** `exerpt = exerpt(emg, n);`  
 Where `n` specifies which pair of start/stop event markers to use.  For example,
 `excerpt(emg, 3);` returns the signal between the third 'start' event marker, 
 and the third 'stop' event marker.  Problems may occurr if the event markers 
@@ -94,10 +81,7 @@ data.
 
 ### movingRMS
 Calculates the root mean square (RMS) of every `n` samples of an EMG signal
-#### Usage:
-```matlab
-RMS = movingRMS(emg, n);
-```
+**Usage:** `RMS = movingRMS(emg, n);`  
 where `RMS` and `emg` are both emg structs, and `n` is the number of samples to
 take in each RMS calculation.  
 
@@ -110,27 +94,23 @@ EMG structs containing the filtered EMG data, and the moving RMS with a
 ## Plotting Functions
 ### plotemg
 Creates a plot of an EMG signal including 'start' and 'stop' event markers.  
-#### Usage:
-```matlab
-plotemg(emg);
-```
-where `emg` is an EMG struct.  The signal is blue, 'start' events are green, 
+**Usage:** `plotemg(emg);` where `emg` is an EMG struct.  The signal is blue, 'start' events are green, 
 and 'stop' events are red.  
 
 ### colorplotemg
 Same as `plotemg` but allows specification of a color and line style for the 
 signal.  
-Usage: `plotemg(emg,color);` where `emg` is an EMG struct and `color` is a 
+**Usage:** `plotemg(emg,color);` where `emg` is an EMG struct and `color` is a 
 string specifying color and line style (e.g. `'r-'` for a red, solid line.  
 
 ### compareplot
 Plots a the signals from both exercises and both muscles for a specified 
 subject and rep numbers.  
-Usage: `compareplot(array, subject, drep, prep);` where `array` is the 4-D 
+**Usage:** `compareplot(array, subject, drep, prep);` where `array` is the 4-D 
 array from which to get the data, `subject` is the subject number to use, `drep`
 is the rep to use for the first exercise (dumbbell press) and `prep` is the rep
 number to use for the second exercise (perfect pushup).  
 
 ### spectrumemg
 Plots the spectrum of an EMG signal.  
-Usage: `spectrumemg(emg);` where `emg` is an EMG struct.  
+**Usage:** `spectrumemg(emg);` where `emg` is an EMG struct.  
