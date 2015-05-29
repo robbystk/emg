@@ -28,14 +28,14 @@ application.
 These scripts make use of structs to store and pass EMG data between functions. 
 An EMG struct has the following elements:  
 
-|:--------|:-------|
-|`signal`|A list of the EMG samples|
-|`time`|A list of time values corresponding to the samples, starting from 0|
-|`l`|the length (number of samples) of the signal|
-|`starts`|A list of the indexes of 'start' event markers|
-|`stops`|A list of the indexes of 'stop' event markers|
-|`n`|The number of pairs of 'start' and 'stop' event markers|
-|`fs`|The sampling frequency in Hz|
+:--------|:-------
+`signal`|A list of the EMG samples
+`time`|A list of time values corresponding to the samples, starting from 0
+`l`|the length (number of samples) of the signal
+`starts`|A list of the indexes of 'start' event markers
+`stops`|A list of the indexes of 'stop' event markers
+`n`|The number of pairs of 'start' and 'stop' event markers
+`fs`|The sampling frequency in Hz
 
 ### 4-dimensional array of all subjects, exercises, reps, and muscles
 The `process` script stores data in four-dimensional arrays with the first 
