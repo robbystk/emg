@@ -28,7 +28,9 @@ application.
 These scripts make use of structs to store and pass EMG data between functions. 
 An EMG struct has the following elements:  
 
-:--------|:-------
+
+Element | Meaning
+--------|-------
 `signal`|A list of the EMG samples
 `time`|A list of time values corresponding to the samples, starting from 0
 `l`|the length (number of samples) of the signal
