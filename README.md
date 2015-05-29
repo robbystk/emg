@@ -5,6 +5,24 @@ deltoid during dumbbell press and perfect pushup, so some things (such as the
 `process` script) are specific to that, but most things will work for any EMG 
 application.  
 
+## Contents
+* [Data Structures](https://github.com/robbystk/emg#data-structures)
+  * [EMG Structs](https://github.com/robbystk/emg#emg-structs)
+  * [4-dimensional Array](https://github.com/robbystk/emg#4-dimensional-array-of-all-subjects-exercises-reps-and-muscles)
+* [Signal Processing Functions](https://github.com/robbystk/emg#signal-processing-functions)
+  * [importemg](https://github.com/robbystk/emg#importemg)
+  * [timebasis](https://github.com/robbystk/emg#timebasis)
+  * [filteremg](https://github.com/robbystk/emg#filteremg)
+  * [deMainsEMG](https://github.com/robbystk/emg#demainsemg)
+  * [crop](https://github.com/robbystk/emg#crop)
+  * [movingRMS](https://github.com/robbystk/emg#movingrms)
+* [process script](https://github.com/robbystk/emg#process)
+* [Plotting Functions](https://github.com/robbystk/emg#plotting-functions)
+  * [plotemg](https://github.com/robbystk/emg#plotemg)
+  * [colorplotemg](https://github.com/robbystk/emg#colorplotemg)
+  * [compareplot](https://github.com/robbystk/emg#compareplot)
+  * [spectrumemg](https://github.com/robbystk/emg#spectrumemg)
+
 ## Data Structures
 ### EMG Structs
 These scripts make use of structs to store and pass EMG data between functions. 
