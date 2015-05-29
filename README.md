@@ -45,7 +45,7 @@ index corresponding to subject number, the second corresponding to exercise, the
 third corresponding to rep number, and the fourth corresponding to muscle 
 number; i.e. `movingrms(subject, exercise, rep, muscle)`.  To get all of a 
 certain index (e.g. all reps for a specific subject, exercise, and muscle) use 
-a colon (`:`) in place of the index (e.g. array(subject, exercise, :, muscle).  
+a colon (`:`) in place of the index (e.g. `array(subject, exercise, :, muscle)`).
 
 ## Signal Processing Functions
 ### importemg
