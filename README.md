@@ -1,4 +1,12 @@
 # EMG
+
+Note: this is old, naive code from a school project that I haven't touched in
+years.  Using an object-oriented approach would have been a lot better.  The
+signal processing bits are sound so use those for inspiration, but I discourage
+use of anything else here.  It would be better to make your own processing
+scripts that you can understand and maintain yourself.  I will not make any
+changes to this code, but you can ask questions about the signal processing aspects.
+
 MATLAB functions and scripts for processing electromyography (EMG) signals.  
 Originally written for data from a CleveMed BioRadio comparing the tricep and 
 deltoid during dumbbell press and perfect pushup, so some things (such as the 
